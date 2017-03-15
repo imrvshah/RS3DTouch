@@ -33,6 +33,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                          userInfo: nil);
         
         application.shortcutItems = [shortcut2, shortcut3];
+//        self.updateItem(application: application);
+    }
+    
+    func removeShortcut(application:UIApplication) {
+        application.shortcutItems = [];
+    }
+    
+    func updateItem(application:UIApplication) {
+        var shortcuts = application.shortcutItems
+        
+        let shortcut4 = UIMutableApplicationShortcutItem(type: "SendDoc", localizedTitle: "Send",
+                                                         localizedSubtitle: "Send document",
+                                                         icon: UIApplicationShortcutIcon(type: .share),
+                                                         userInfo: nil);
+
+        
+        shortcuts![0] = shortcut4
+        application.shortcutItems = shortcuts
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
