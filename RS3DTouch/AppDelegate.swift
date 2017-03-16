@@ -31,9 +31,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                          localizedSubtitle: "Update document",
                                                          icon: UIApplicationShortcutIcon(type: .update),
                                                          userInfo: nil);
+        let shortcut4 = UIMutableApplicationShortcutItem(type: "SendDoc", localizedTitle: "Send",
+                                                         localizedSubtitle: "Send document",
+                                                         icon: UIApplicationShortcutIcon(type: .share),
+                                                         userInfo: nil);
         
-        application.shortcutItems = [shortcut2, shortcut3];
-//        self.updateItem(application: application);
+        application.shortcutItems = [shortcut2, shortcut3, shortcut4];
+        //        self.updateItem(application: application);
     }
     
     func removeShortcut(application:UIApplication) {
@@ -47,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                          localizedSubtitle: "Send document",
                                                          icon: UIApplicationShortcutIcon(type: .share),
                                                          userInfo: nil);
-
+        
         
         shortcuts![0] = shortcut4
         application.shortcutItems = shortcuts
@@ -75,6 +79,65 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    // Quick action selection
+    
+    /*
+     Called when the user activates your application by selecting a shortcut on the home screen, except when
+     application(_:,willFinishLaunchingWithOptions:) or application(_:didFinishLaunchingWithOptions) returns `false`.
+     You should handle the shortcut in those callbacks and return `false` if possible. In that case, this
+     callback is used if your application is already launched in the background.
+     */
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        let handledShortCutItem = handleShortCutItem(shortcutItem: shortcutItem)
+        
+        completionHandler(handledShortCutItem)
+    }
+    
+    func handleShortCutItem(shortcutItem: UIApplicationShortcutItem) -> Bool {
+        var handle = false;
+        // gurad to see if the shortcutItem type is string
+        guard let shortCutType = shortcutItem.type as String? else { return false }
+        
+        switch (shortCutType) {
+        case "Compose":
+            // Handle shortcut 1 (static).
+            handle = true;
+            break
+        case "Search":
+            // Handle shortcut 2 (dynamic).
+            handle = true;
+            break
+        case "Update":
+            // Handle shortcut 3 (dynamic).
+            handle = true;
+            break
+        case "Send":
+            // Handle shortcut 4 (dynamic).
+            handle = true;
+            break
+        default:
+            break
+        }
+        self.showAlert(message: shortcutItem.localizedTitle)
+        return handle;
+    }
+    
+    func showAlert(message: String) {
+        let alertController = UIAlertController(title: "Quick Action",
+                                                message: message + " Document",
+                                                preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK",
+                                     style: .default,
+                                     handler: nil)
+        
+        alertController.addAction(okAction)
+        
+        window!.rootViewController?.present(alertController,
+                                            animated: true, completion: nil)
+    }
     
 }
+
+
 
