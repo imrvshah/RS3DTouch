@@ -26,7 +26,7 @@ There are two types of quick actions
 * Now, it is the type of array as we can include more than one shortcut items so select array as type .
 
 
-![image alt text](image_0.png)
+![image alt text](Images/image_0.png)
 
 
 * Now click on the expand arrow on left side of item and click on "+" add button and select type as dictionary. Here we are creating dictionary because we can store multiple key-value pair as an object of array. 
@@ -34,7 +34,7 @@ There are two types of quick actions
 * Click on the arrow to the left of the Item0 key so that it is pointing downward and click on the + button to add the first entry into the dictionary. 
 
 
-![image alt text](image_1.png)
+![image alt text](Images/image_1.png)
 
 
 * Now here use can add the information  you required to show for the item. 
@@ -56,7 +56,7 @@ There are two types of quick actions
 * At the end you will see something like this 
 
 
-![image alt text](image_2.png)
+![image alt text](Images/image_2.png)
 
 
 #### `Dynamic Quick Actions`
@@ -74,13 +74,13 @@ There are two types of quick actions
 * To add dynamic quick action you can create a method and call it from AppDelegate.swift file and modify the didFinishLaunchingWithOptions method.
 
 
-![image alt text](image_3.png)
+![image alt text](Images/image_3.png)
 
 
 * You won’t see these item before launching the app one time because the code needs to execute before it shows output. So please allow application to run at least one time and then you can see all options like below image. 
 
 
-![image alt text](image_4.png)
+![image alt text](Images/image_4.png)
 
 
 * You can see total 4 items one we have added through static quick actions and other three from dynamic quick actions. 
@@ -90,13 +90,13 @@ There are two types of quick actions
 * If you want to remove all items you can just simply do this. 
 
 
-![image alt text](image_5.png)
+![image alt text](Images/image_5.png)
 
 
 * If you want to update one of the item you can just replace the item in the array shortcutItems. 
 
 
-![image alt text](image_6.png)
+![image alt text](Images/image_6.png)
 
 
 #### `Responding to Quick Actions`
@@ -108,11 +108,11 @@ There are two types of quick actions
 * You can see example below. 
 
 
-![image alt text](image_7.png)
+![image alt text](Images/image_7.png)
 
 
 
-![image alt text](image_8.png)
+![image alt text](Images/image_8.png)
 
 
 #### `Test Quick Actions`
