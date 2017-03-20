@@ -126,4 +126,4 @@ There are two types of quick actions
 
 If you have any questions, concerned please don’t hesitate to contact me.
 
-Twitter:[@imrvshah](www.twitter.com/imrvshah)
+Twitter: [@imrvshah](https://www.twitter.com/imrvshah)
